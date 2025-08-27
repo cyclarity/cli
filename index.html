@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -269,7 +269,143 @@
   
   
   <span class="md-ellipsis">
-    Clarity CLI – Latest (1.0.0)
+    Clarity CLI – 1.0.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.0.1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            1.0.1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.0.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – Latest (1.0.1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.0.7
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            1.0.7
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1.0.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – Latest (1.0.7)
     
   </span>
   
@@ -324,11 +460,55 @@
 <h1 id="clarity-cli-docs">Clarity CLI Docs</h1>
 <p><strong>Select a version:</strong></p>
 <ul>
-<li><a href="/cli/1.0.0/">Latest (1.0.0)</a></li>
+<li><a href="/cli/1.0.7/">Latest (1.0.7)</a></li>
+<li><a href="/cli/1.0.0/">(1.0.0)</a></li>
 </ul>
 <!-- - [Next](../next/) _(work in progress)_ -->
 
 <p>Use the version selector in the top-left corner of the site to switch between releases.</p>
+<h1 id="whats-new-in-clarity-cli-107">🔄 What’s New in Clarity CLI 1.0.7</h1>
+<h2 id="command-enhancements">✅ Command Enhancements</h2>
+<ul>
+<li>
+<p><strong><code>clarity execute</code></strong></p>
+<ul>
+<li>Now supports <code>--plan-id</code> (in addition to <code>--test-id</code>) to execute test plans.</li>
+<li>Added <code>-y</code> flag for non-interactive “yes to all” confirmations.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>clarity profile-setup</code></strong></p>
+<ul>
+<li>Added support for <code>--domain</code> to specify multi-tenant domains.</li>
+<li>Updated option name to <code>--agent_id</code> (was <code>--agent-id</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong><code>clarity upload</code></strong></p>
+<ul>
+<li>Now supports <code>--profile</code> and <code>--override-config-path</code> like other commands.</li>
+<li>Improved component handling with:<ul>
+<li><code>--entrypoint</code></li>
+<li><code>--running-env</code> (<code>IOT</code> or <code>CLOUD</code>)</li>
+<li><code>--pyc</code> to compile before upload</li>
+<li><code>-y</code> for auto-confirmation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>clarity generate-report</code></strong><ul>
+<li>Improved component handling with:<ul>
+<li><code>--report-type, -r [PDF|CSV]</code>: Report format (default: PDF)</li>
+<li><code>--execution-id, -e TEXT</code>: Specify the execution ID to generate report for</li>
+<li><code>--project-id, -proj TEXT</code>: Specify the project ID</li>
+<li><code>--profile, -p TEXT</code>: Profile to use</li>
+<li><code>--override-config-path, -cfg TEXT</code>: Path to config.json</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples">Examples</h3>
 
 
 
@@ -380,10 +560,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
