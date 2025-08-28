@@ -514,6 +514,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#clarity-get-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity get-findings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="clarity get-findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -640,6 +682,48 @@
       clarity upload
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-get-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity get-findings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="clarity get-findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -915,6 +999,80 @@ clarity execute --test-id TEST-123
 <pre><code class="language-bash">clarity upload --component-path ./my_component --entrypoint my_component.main:handler -r CLOUD --pyc -y
 </code></pre>
 <hr />
+<h3 id="clarity-get-findings"><code>clarity get-findings</code></h3>
+<p>Retrieve and display findings from a specific test execution with pagination support.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--execution-id, -e</code></td>
+<td>Execution ID to get findings for (required if not interactive).</td>
+</tr>
+<tr>
+<td><code>--output-type, -o</code></td>
+<td>Output format: <code>table</code> (default) or <code>json</code>.</td>
+</tr>
+<tr>
+<td><code>--file-path, -f</code></td>
+<td>Optional file path to save findings data as JSON.</td>
+</tr>
+<tr>
+<td><code>--page-size, -s</code></td>
+<td>Number of findings per page (default: 20, use 0 for no pagination).</td>
+</tr>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>Profile to use (fallback to <em>default</em>).</td>
+</tr>
+<tr>
+<td><code>--override-config-path, -c</code></td>
+<td>Path to <code>config.json</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="features">Features</h4>
+<ul>
+<li><strong>Smart Pagination</strong>: Shows first 20 findings in terminal, saves remaining to file</li>
+<li><strong>Interactive Navigation</strong>: When using pagination, navigate with simple commands</li>
+<li><strong>Multiple Output Formats</strong>: Table view for terminal, JSON for automation</li>
+<li><strong>File Export</strong>: Automatically saves large result sets to timestamped JSON files</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<pre><code class="language-bash"># Basic usage - shows first 20 findings in table format
+clarity get-findings --execution-id TestExecution_123
+
+# Get all findings without pagination
+clarity get-findings --execution-id TestExecution_123 --page-size 0
+
+# Export to JSON file
+clarity get-findings --execution-id TestExecution_123 --output-type json --file-path findings.json
+
+</code></pre>
+<h4 id="pagination-behavior">Pagination Behavior</h4>
+<p>When you have more than 20 findings (or your specified page size):</p>
+<ol>
+<li><strong>Terminal Display</strong>: Shows first N findings in a formatted table</li>
+<li><strong>Automatic File Save</strong>: Remaining findings saved to <code>findings_ExecutionID_timestamp.json</code></li>
+<li><strong>Clickable Link</strong>: Provides file path for easy access to complete data</li>
+</ol>
+<p><strong>Example Output:</strong></p>
+<pre><code>Execution Findings (Showing first 20 of 250)
+┌─────────────┬───────────┬─────────┬─────────────┬───────┐
+│ Finding type│ Step name │ Purpose │ Description │ Topic │
+├─────────────┼───────────┼─────────┼─────────────┼───────┤
+│ ...         │ ...       │ ...     │ ...         │ ...   │
+└─────────────┴───────────┴─────────┴─────────────┴───────┘
+
+230 additional findings saved to file:
+📄 findings_TestExecution_123_20241220_143052.json
+Full path: /your/current/directory/findings_TestExecution_123_20241220_143052.json
+</code></pre>
+<hr />
 <h2 id="verbose-mode">🤖 Verbose mode</h2>
 <p>Add <code>-v</code> <strong>before</strong> the subcommand to enable debug logs:</p>
 <pre><code class="language-bash">clarity -v execute --test-id TEST-123
@@ -933,7 +1091,7 @@ clarity execute --test-id TEST-123
 <li><code>--profile, -p TEXT</code>: Profile to use</li>
 <li><code>--override-config-path, -cfg TEXT</code>: Path to config.json</li>
 </ul>
-<h3 id="examples">Examples</h3>
+<h3 id="examples_1">Examples</h3>
 <pre><code class="language-bash"># Generate PDF report (default)
 clarity generate-report --execution-id TestExecution_123 --project-id TestProj --report-type PDF --profile &quot;&quot;
 
