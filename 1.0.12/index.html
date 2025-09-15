@@ -1,0 +1,1376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cyclarity.github.io/cli/1.0.12/">
+      
+      
+        <link rel="prev" href="../1.0.1/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Clarity CLI – Latest (1.0.12) - CyClarity-CLI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#clarity-cli" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CyClarity-CLI" class="md-header__button md-logo" aria-label="CyClarity-CLI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CyClarity-CLI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Clarity CLI – Latest (1.0.12)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CyClarity-CLI" class="md-nav__button md-logo" aria-label="CyClarity-CLI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CyClarity-CLI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.0.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1.0.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – 1.0.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.0.1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            1.0.1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – Latest (1.0.1)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.0.12
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            1.0.12
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – Latest (1.0.12)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clarity CLI – Latest (1.0.12)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Quick start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config-files-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂 Config files &amp; profiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-integration-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 App Integration Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Command reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠 Command reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clarity-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity execute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-profile-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity profile-setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-get-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity get-findings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="clarity get-findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbose-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 Verbose mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-generation-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Report Generation Guide
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Quick start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#config-files-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂 Config files &amp; profiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-integration-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 App Integration Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Command reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠 Command reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clarity-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity execute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-profile-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity profile-setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarity-get-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      clarity get-findings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="clarity get-findings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbose-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 Verbose mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-generation-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Report Generation Guide
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="clarity-cli">Clarity CLI 🚀</h1>
+<p>Interactive command-line tool for test management, profile handling, and component uploads to <strong>CyClarity</strong>.</p>
+<blockquote>
+<p><strong>Why another CLI?</strong><br />
+Clarity CLI bundles everyday actions (login, test execution, artifact upload) into a single, script-friendly interface—so you can automate your QA pipelines without juggling multiple tools.</p>
+</blockquote>
+<hr />
+<h2 id="installation">📦 Installation</h2>
+<pre><code class="language-bash">pip install clarity-cli
+</code></pre>
+<hr />
+<h2 id="quick-start">⚡ Quick start</h2>
+<pre><code class="language-bash"># 1️⃣  Configure a profile (once)
+clarity profile-setup   --profile dev   --client-id &lt;ID&gt;   --client-secret &lt;SECRET&gt;   --token-endpoint https://auth.example.com/oauth/token   --scope &quot;clarity offline_access&quot;   --project 42 --workspace 7 --agent_id AGENT_1   --default
+
+# 2️⃣  Log in (refreshes &amp; stores JWT)
+clarity login --profile dev
+
+# 3️⃣  Run a single test
+clarity execute --test-id TEST-123
+</code></pre>
+<hr />
+<h2 id="config-files-profiles">🗂 Config files &amp; profiles</h2>
+<table>
+<thead>
+<tr>
+<th>File / Dir</th>
+<th>Purpose</th>
+<th>Default location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config.json</code></td>
+<td>Stores profiles &amp; tokens</td>
+<td><code>~/.clarity/config.json</code></td>
+</tr>
+<tr>
+<td><code>~/.clarity/</code></td>
+<td>Root config directory (auto-created)</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Profiles let you switch between environments (dev, staging, prod) without re-entering secrets.</p>
+</blockquote>
+<hr />
+<h2 id="app-integration-setup">🔗 App Integration Setup</h2>
+<p>Before using the CLI, you need to create an app integration in the CyClarity system to get your client credentials.</p>
+<h3 id="step-by-step-guide">Step-by-step guide:</h3>
+<ol>
+<li><strong>Access Account Settings</strong>: Click on your profile menu and select "Account settings"
+<br><img src="../assets/images/account-settings.png" alt="Account Settings Menu" style="max-width: 300px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Navigate to App Integrations</strong>: Click on "App Integrations" from the settings menu
+<br><img src="../assets/images/app-integrations.png" alt="App Integrations Page" style="max-width: 600px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Create New Integration</strong>: Choose a descriptive name for your integration and click "Create"
+<br><img src="../assets/images/create-integration.png" alt="Create Integration Form" style="max-width: 500px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Save Credentials</strong>: Copy the generated Client ID and Client Secret - you'll need these for profile setup</li>
+</ol>
+<blockquote>
+<p><strong>💡 Tip:</strong> Keep your client credentials secure and never share them publicly. Each integration should have a unique, descriptive name to help you manage multiple environments.</p>
+</blockquote>
+<hr />
+<h2 id="command-reference">🛠 Command reference</h2>
+<h3 id="clarity-execute"><code>clarity execute</code></h3>
+<p>Run a test or plan interactively or headless.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--test-id, -t</code></td>
+<td>Execute a specific test.</td>
+<td><code>--test-id TEST-123</code></td>
+</tr>
+<tr>
+<td><code>--plan-id, -t</code></td>
+<td>Execute a specific plan.</td>
+<td><code>--plan-id PLAN-42</code></td>
+</tr>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>Profile to use.</td>
+<td><code>--profile prod</code></td>
+</tr>
+<tr>
+<td><code>--override-config-path, -c</code></td>
+<td>Path to <code>config.json</code>.</td>
+<td><code>--override-config-path ./config.json</code></td>
+</tr>
+<tr>
+<td><code>--project, -proj</code></td>
+<td>Override project ID.</td>
+<td><code>--project 99</code></td>
+</tr>
+<tr>
+<td><code>--workspace, -w</code></td>
+<td>Override workspace ID.</td>
+<td><code>--workspace 5</code></td>
+</tr>
+<tr>
+<td><code>--agent-id, -a</code></td>
+<td>Run on specific agent.</td>
+<td><code>--agent-id AGENT_2</code></td>
+</tr>
+<tr>
+<td><code>--parameters-file</code></td>
+<td>Flow variable values (JSON).</td>
+<td><code>--parameters-file vars.json</code></td>
+</tr>
+<tr>
+<td><code>-y</code></td>
+<td>Non-interactive, assume yes.</td>
+<td><code>-y</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">clarity execute --test-id TEST-123 --parameters-file vars.json
+</code></pre>
+<hr />
+<h3 id="clarity-profile-setup"><code>clarity profile-setup</code></h3>
+<p>Create or update a profile.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>✔</td>
+<td>Profile name.</td>
+</tr>
+<tr>
+<td><code>--client-id, -id</code></td>
+<td>✔</td>
+<td>OAuth client ID.</td>
+</tr>
+<tr>
+<td><code>--client-secret, -cs</code></td>
+<td>✔</td>
+<td>OAuth client secret.</td>
+</tr>
+<tr>
+<td><code>--token-endpoint, -e</code></td>
+<td>✔</td>
+<td>OAuth token URL.</td>
+</tr>
+<tr>
+<td><code>--scope, -s</code></td>
+<td>✔</td>
+<td>OAuth scopes (space-separated).</td>
+</tr>
+<tr>
+<td><code>--project, -proj</code></td>
+<td>–</td>
+<td>Default project ID.</td>
+</tr>
+<tr>
+<td><code>--workspace, -w</code></td>
+<td>–</td>
+<td>Default workspace ID.</td>
+</tr>
+<tr>
+<td><code>--agent_id, -a</code></td>
+<td>–</td>
+<td>Default agent ID.</td>
+</tr>
+<tr>
+<td><code>--domain</code></td>
+<td>–</td>
+<td>Override Clarity domain.</td>
+</tr>
+<tr>
+<td><code>--default, -d</code></td>
+<td>–</td>
+<td>Set as default profile.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">clarity profile-setup -p staging -id XXX -cs YYY -e https://auth/staging/token -s &quot;clarity&quot;
+</code></pre>
+<hr />
+<h3 id="clarity-login"><code>clarity login</code></h3>
+<p>Log in with a saved profile and retrieve a new token.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>Profile to use (fallback to <em>default</em>).</td>
+</tr>
+<tr>
+<td><code>--override-config-path, -c</code></td>
+<td>Path to <code>config.json</code>.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">clarity login -p prod
+</code></pre>
+<hr />
+<h3 id="clarity-upload"><code>clarity upload</code></h3>
+<p>Package &amp; upload a component to CyClarity.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>Profile to use.</td>
+</tr>
+<tr>
+<td><code>--override-config-path, -c</code></td>
+<td>Path to <code>config.json</code>.</td>
+</tr>
+<tr>
+<td><code>--component-path</code></td>
+<td>Path to Poetry project.</td>
+</tr>
+<tr>
+<td><code>--entrypoint, -e</code></td>
+<td>Format: <code>module:function</code>.</td>
+</tr>
+<tr>
+<td><code>--running-env, -r</code></td>
+<td>Target runtime: <code>IOT</code> or <code>CLOUD</code>.</td>
+</tr>
+<tr>
+<td><code>--pyc</code></td>
+<td>Compile <code>.pyc</code> before upload.</td>
+</tr>
+<tr>
+<td><code>-y</code></td>
+<td>Non-interactive, assume yes.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">clarity upload --component-path ./my_component --entrypoint my_component.main:handler -r CLOUD --pyc -y
+</code></pre>
+<hr />
+<h3 id="clarity-get-findings"><code>clarity get-findings</code></h3>
+<p>Retrieve and display findings from a specific test execution with pagination support.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--execution-id, -e</code></td>
+<td>Execution ID to get findings for (required if not interactive).</td>
+</tr>
+<tr>
+<td><code>--output-type, -o</code></td>
+<td>Output format: <code>table</code> (default) or <code>json</code>.</td>
+</tr>
+<tr>
+<td><code>--file-path, -f</code></td>
+<td>Optional file path to save findings data as JSON.</td>
+</tr>
+<tr>
+<td><code>--page-size, -s</code></td>
+<td>Number of findings per page (default: 20, use 0 for no pagination).</td>
+</tr>
+<tr>
+<td><code>--profile, -p</code></td>
+<td>Profile to use (fallback to <em>default</em>).</td>
+</tr>
+<tr>
+<td><code>--override-config-path, -c</code></td>
+<td>Path to <code>config.json</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="features">Features</h4>
+<ul>
+<li><strong>Smart Pagination</strong>: Shows first 20 findings in terminal, saves remaining to file</li>
+<li><strong>Interactive Navigation</strong>: When using pagination, navigate with simple commands</li>
+<li><strong>Multiple Output Formats</strong>: Table view for terminal, JSON for automation</li>
+<li><strong>File Export</strong>: Automatically saves large result sets to timestamped JSON files</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<pre><code class="language-bash"># Basic usage - shows first 20 findings in table format
+clarity get-findings --execution-id TestExecution_123
+
+# Get all findings without pagination
+clarity get-findings --execution-id TestExecution_123 --page-size 0
+
+# Export to JSON file
+clarity get-findings --execution-id TestExecution_123 --output-type json --file-path findings.json
+
+</code></pre>
+<h4 id="pagination-behavior">Pagination Behavior</h4>
+<p>When you have more than 20 findings (or your specified page size):</p>
+<ol>
+<li><strong>Terminal Display</strong>: Shows first N findings in a formatted table</li>
+<li><strong>Automatic File Save</strong>: Remaining findings saved to <code>findings_ExecutionID_timestamp.json</code></li>
+<li><strong>Clickable Link</strong>: Provides file path for easy access to complete data</li>
+</ol>
+<p><strong>Example Output:</strong></p>
+<pre><code>Execution Findings (Showing first 20 of 250)
+┌─────────────┬───────────┬─────────┬─────────────┬───────┐
+│ Finding type│ Step name │ Purpose │ Description │ Topic │
+├─────────────┼───────────┼─────────┼─────────────┼───────┤
+│ ...         │ ...       │ ...     │ ...         │ ...   │
+└─────────────┴───────────┴─────────┴─────────────┴───────┘
+
+230 additional findings saved to file:
+📄 findings_TestExecution_123_20241220_143052.json
+Full path: /your/current/directory/findings_TestExecution_123_20241220_143052.json
+</code></pre>
+<hr />
+<h2 id="verbose-mode">🤖 Verbose mode</h2>
+<p>Add <code>-v</code> <strong>before</strong> the subcommand to enable debug logs:</p>
+<pre><code class="language-bash">clarity -v execute --test-id TEST-123
+</code></pre>
+<hr />
+<h1 id="report-generation-guide">Report Generation Guide</h1>
+<p>This guide explains how to use the <code>generate-report</code> command and understand the different response scenarios for automation purposes.</p>
+<h2 id="command-usage">Command Usage</h2>
+<pre><code class="language-bash">clarity generate-report [OPTIONS]
+</code></pre>
+<h3 id="options">Options</h3>
+<ul>
+<li><code>--report-type, -r [PDF|CSV]</code>: Report format (default: PDF)</li>
+<li><code>--execution-id, -e TEXT</code>: Specify the execution ID to generate report for</li>
+<li><code>--project-id, -proj TEXT</code>: Specify the project ID</li>
+<li><code>--profile, -p TEXT</code>: Profile to use</li>
+<li><code>--override-config-path, -cfg TEXT</code>: Path to config.json</li>
+</ul>
+<h3 id="examples_1">Examples</h3>
+<pre><code class="language-bash"># Generate PDF report (default)
+clarity generate-report --execution-id TestExecution_123 --project-id TestProj --report-type PDF --profile &quot;&quot;
+
+# Generate CSV report
+clarity generate-report --execution-id TestExecution_123 --project-id TestProj --report-type CSV --profile &quot;&quot;
+
+# Interactive mode (will prompt for missing parameters)
+clarity generate-report --report-type PDF
+</code></pre>
+<h2 id="response-scenarios">Response Scenarios</h2>
+<p>The system returns different responses based on the current status of the report generation process.</p>
+<h3 id="1-report-completed">1. Report Completed ✅</h3>
+<p><strong>When:</strong> Report generation is finished and file is available for download</p>
+<p><strong>Response Format:</strong></p>
+<pre><code class="language-json">{
+  &quot;statusCode&quot;: 200,
+  &quot;body&quot;: {
+    &quot;presigned_url_link&quot;: &quot;https://s3-presigned-url-to-download-file&quot;
+  }
+}
+</code></pre>
+<p><strong>CLI Output:</strong></p>
+<pre><code>✅ Report generation completed!
+📄 PDF Report is ready!
+Download URL: https://s3-presigned-url-to-download-file
+You can copy and paste this URL into your browser
+</code></pre>
+<p><strong>For Automation:</strong> 
+- Condition: Response contains <code>presigned_url_link</code> with actual URL
+- Action: Download the file using the provided URL
+- The URL is a time-limited presigned S3 URL</p>
+<h3 id="2-report-in-progress">2. Report In Progress 🔄</h3>
+<p><strong>When:</strong> Report generation has been triggered and is currently running</p>
+<p><strong>Response Format:</strong></p>
+<pre><code class="language-json">{
+  &quot;statusCode&quot;: 200,
+  &quot;body&quot;: {
+    &quot;message&quot;: &quot;Report generation in process.&quot;
+  }
+}
+</code></pre>
+<p><strong>CLI Output:</strong></p>
+<pre><code>⚠️  Report generation in process.
+You can run this command again later to check the status
+</code></pre>
+<p><strong>For Automation:</strong>
+- Condition: Response contains <code>message</code> field (typically "Report generation in process.")
+- Action: Wait and retry the command after some time (recommended: 30-60 seconds)
+- Continue polling until you get a presigned URL or failure message</p>
+<h3 id="3-report-not-started">3. Report Not Started 📋</h3>
+<p><strong>When:</strong> No report generation has been initiated for this execution</p>
+<p><strong>Response Format:</strong></p>
+<pre><code class="language-json">{
+  &quot;statusCode&quot;: 200,
+  &quot;body&quot;: {
+    &quot;presigned_url_link&quot;: &quot;&quot;
+  }
+}
+</code></pre>
+<p><strong>CLI Output:</strong></p>
+<pre><code>⚠️  Report is not ready yet. No download link available.
+You can run this command again later to check the status
+</code></pre>
+<p><strong>For Automation:</strong>
+- Condition: Response contains <code>presigned_url_link</code> with empty string value
+- Action: The CLI will automatically trigger report generation
+- After triggering, subsequent checks will show "Report generation in process."</p>
+<h3 id="4-report-failed">4. Report Failed ❌</h3>
+<p><strong>When:</strong> Report generation encountered an error and failed</p>
+<p><strong>Response Format:</strong></p>
+<pre><code class="language-json">{
+  &quot;statusCode&quot;: 400,
+  &quot;body&quot;: {
+    &quot;message&quot;: &quot;Report generation has failed.&quot;
+  }
+}
+</code></pre>
+<p><strong>CLI Output:</strong></p>
+<pre><code>❌ Report generation has failed.
+</code></pre>
+<p><strong>For Automation:</strong>
+- Condition: Response has <code>statusCode: 400</code> with error message
+- Action: Check execution logs or retry the command
+- May require manual intervention</p>
+<h2 id="automation-workflow">Automation Workflow</h2>
+<p>Here's a recommended automation workflow:</p>
+<h3 id="python-example">Python Example</h3>
+<pre><code class="language-python">import subprocess
+import json
+import time
+
+def wait_for_report(execution_id, project_id,  profile, report_type):
+    &quot;&quot;&quot;
+    Wait for report generation to complete and return download URL
+    Continues indefinitely until report is ready or fails
+    &quot;&quot;&quot;
+    attempt = 0
+
+    while True:
+        attempt += 1
+        try:
+            # Run the CLI command
+            result = subprocess.run([
+                'clarity', 'generate-report',
+                '--profile', profile,
+                '--execution-id', execution_id,
+                '--project-id', project_id,
+                '--report-type', report_type
+            ], capture_output=True, text=True)
+
+            # Check the actual CLI output messages (regardless of return code)
+            output = result.stdout + result.stderr
+
+            if &quot;Report is ready&quot; in output or &quot;Download URL:&quot; in output:
+                # Report completed successfully
+                print(&quot;Report ready! Check CLI output for download URL&quot;)
+                print(f&quot;Output: {output}&quot;)
+                return True
+            elif &quot;Report generation in process&quot; in output:
+                print(f&quot;Attempt {attempt}: Report still generating...&quot;)
+                time.sleep(30)  # Wait 30 seconds
+            elif &quot;Report generation has failed&quot; in output:
+                print(&quot;Report generation failed!&quot;)
+                return False
+            elif &quot;Report is not ready yet&quot; in output:
+                print(
+                    f&quot;Attempt {attempt}: Report not started, will be triggered...&quot;)
+                time.sleep(15)  # Wait 15 seconds
+            elif &quot;Generating&quot; in output and &quot;Report&quot; in output:
+                # This handles the initial &quot;Generating PDF Report&quot; message
+                print(f&quot;Attempt {attempt}: Starting report generation...&quot;)
+                time.sleep(15)  # Wait 15 seconds
+            else:
+                print(f&quot;Attempt {attempt}: Checking status...&quot;)
+                print(f&quot;Output: {output}&quot;)
+                time.sleep(15)  # Wait and try again
+
+        except KeyboardInterrupt:
+            print(&quot;\nStopped by user (Ctrl+C)&quot;)
+            return False
+        except Exception as e:
+            print(f&quot;Error running command: {e}&quot;)
+            return False
+
+# Usage
+if wait_for_report(&quot;TestExecution_123&quot;, &quot;TestProj&quot;, &quot;PDF&quot;):
+    print(&quot;Success! Download the report using the provided URL&quot;)
+else:
+    print(&quot;Failed to generate report or stopped by user&quot;)
+</code></pre>
+<h2 id="report-types">Report Types</h2>
+<h3 id="pdf-reports">PDF Reports</h3>
+<ul>
+<li><strong>Format:</strong> Portable Document Format</li>
+<li><strong>Content:</strong> Comprehensive test execution report with findings, charts, and detailed analysis</li>
+<li><strong>Use Case:</strong> Human-readable reports, presentations, documentation</li>
+<li><strong>File Extension:</strong> <code>.pdf</code></li>
+</ul>
+<h3 id="csv-reports">CSV Reports</h3>
+<ul>
+<li><strong>Format:</strong> Comma-Separated Values</li>
+<li><strong>Content:</strong> Structured data export of findings and execution details</li>
+<li><strong>Use Case:</strong> Data analysis, integration with other tools, spreadsheet import</li>
+<li><strong>File Extension:</strong> <code>.csv</code></li>
+</ul>
+<h3 id="getting-help">Getting Help</h3>
+<p>For additional support:
+- Check the main CLI documentation
+- Use <code>clarity-cli generate-report --help</code> for command options
+- Contact your system administrator for access issues</p>
+<p><em>Last updated: 23‑06‑2025</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
