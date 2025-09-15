@@ -442,6 +442,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#app-integration-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 App Integration Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       📦 Installation
@@ -463,15 +472,6 @@
   <a href="#config-files-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       🗂 Config files &amp; profiles
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#app-integration-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 App Integration Setup
     </span>
   </a>
   
@@ -631,6 +631,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#app-integration-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 App Integration Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       📦 Installation
@@ -652,15 +661,6 @@
   <a href="#config-files-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       🗂 Config files &amp; profiles
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#app-integration-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 App Integration Setup
     </span>
   </a>
   
@@ -800,6 +800,22 @@
 Clarity CLI bundles everyday actions (login, test execution, artifact upload) into a single, script-friendly interface—so you can automate your QA pipelines without juggling multiple tools.</p>
 </blockquote>
 <hr />
+<h2 id="app-integration-setup">🔗 App Integration Setup</h2>
+<p>Before using the CLI, you need to create an app integration in the CyClarity system to get your client credentials.</p>
+<h3 id="step-by-step-guide">Step-by-step guide:</h3>
+<ol>
+<li><strong>Access Account Settings</strong>: Click on your profile menu and select "Account settings"
+<br><img src="../assets/images/account-settings.png" alt="Account Settings Menu" style="max-width: 300px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Navigate to App Integrations</strong>: Click on "App Integrations" from the settings menu
+<br><img src="../assets/images/app-integrations.png" alt="App Integrations Page" style="max-width: 600px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Create New Integration</strong>: Choose a descriptive name for your integration and click "Create"
+<br><img src="../assets/images/create-integration.png" alt="Create Integration Form" style="max-width: 500px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
+<li><strong>Save Credentials</strong>: Copy the generated Client ID and Client Secret - you'll need these for profile setup</li>
+</ol>
+<blockquote>
+<p><strong>💡 Tip:</strong> Keep your client credentials secure and never share them publicly. Each integration should have a unique, descriptive name to help you manage multiple environments.</p>
+</blockquote>
+<hr />
 <h2 id="installation">📦 Installation</h2>
 <pre><code class="language-bash">pip install clarity-cli
 </code></pre>
@@ -840,23 +856,6 @@ clarity execute --test-id TEST-123
 <blockquote>
 <p>Profiles let you switch between environments (dev, staging, prod) without re-entering secrets.</p>
 </blockquote>
-<hr />
-<h2 id="app-integration-setup">🔗 App Integration Setup</h2>
-<p>Before using the CLI, you need to create an app integration in the CyClarity system to get your client credentials.</p>
-<h3 id="step-by-step-guide">Step-by-step guide:</h3>
-<ol>
-<li><strong>Access Account Settings</strong>: Click on your profile menu and select "Account settings"
-<br><img src="../assets/images/account-settings.png" alt="Account Settings Menu" style="max-width: 300px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
-<li><strong>Navigate to App Integrations</strong>: Click on "App Integrations" from the settings menu
-<br><img src="../assets/images/app-integrations.png" alt="App Integrations Page" style="max-width: 600px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
-<li><strong>Create New Integration</strong>: Choose a descriptive name for your integration and click "Create"
-<br><img src="../assets/images/create-integration.png" alt="Create Integration Form" style="max-width: 500px; border: 1px solid #ddd; border-radius: 4px; margin: 10px 0;"></li>
-<li><strong>Save Credentials</strong>: Copy the generated Client ID and Client Secret - you'll need these for profile setup</li>
-</ol>
-<blockquote>
-<p><strong>💡 Tip:</strong> Keep your client credentials secure and never share them publicly. Each integration should have a unique, descriptive name to help you manage multiple environments.</p>
-</blockquote>
-<hr />
 <h2 id="command-reference">🛠 Command reference</h2>
 <h3 id="clarity-execute"><code>clarity execute</code></h3>
 <p>Run a test or plan interactively or headless.</p>
